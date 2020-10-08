@@ -1,0 +1,2 @@
+#!/usr/bin/env 
+ln -sf ../Marlin/Configuration*.h . 
