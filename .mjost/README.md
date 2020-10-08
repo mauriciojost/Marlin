@@ -9,6 +9,7 @@ Z bed levelling: inductor sensor.
 # Useful commands
 
 platformio lib search "header:LiquidCrystal.h"
-pio lib install "U8glib"
+platformio lib install LiquidCrystal
+platformio lib install U8glib
 
 
