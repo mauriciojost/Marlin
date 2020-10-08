@@ -1,0 +1,1 @@
+pio -f -c atom serialports monitor --raw --port /dev/ttyUSB0 -b 250000
