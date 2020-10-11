@@ -26,7 +26,19 @@ That's all.
 
 # Commands
 
-## Checks and calibration
+## Z probe calibration (regular)
+
+```
+                        0. put paper on bed
+M851 Z-2.57             1. try a value
+G28                     2. level bed again
+G1 Z0                   3. go to Z0 (should block the paper, otherwise expand delta Z on 1. and iterate)
+
+M500                    4. once good store on eeprom
+
+```
+
+## Checks and initial calibration
 
 ```
                        measure maximum range X and Y and Z and set them into X/Y_BED_SIZE
