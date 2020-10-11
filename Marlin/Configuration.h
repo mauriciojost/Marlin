@@ -983,8 +983,8 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-// MJOST: SCENARIO 4
-#define NOZZLE_TO_PROBE_OFFSET { -15, -41, -2 }
+// MJOST: SCENARIO 4, Z to be configured with M851 Z-XXX and stored on eeprom
+#define NOZZLE_TO_PROBE_OFFSET { -15, -41, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
