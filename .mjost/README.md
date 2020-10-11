@@ -26,10 +26,9 @@ That's all.
 
 # Commands
 
+## Checks and calibration
+
 ```
-
-# Checks
-
                        measure maximum range X and Y and Z and set them into X/Y_BED_SIZE
                        (this assumes no bed start before endstops)
 
@@ -46,20 +45,23 @@ M851                   after auto-home G28 see the xyz probe offset
 M851 X-15 Y-41 Z-2.57  
                        or clear EEPROM with
 M502                   (reset the eeprom, many bed leveling metrics are there)
-                       and flash the firmware again, this fixed the issue for me.
+                       and default firmware defs will be used, this fixed the issue for me.
                          
-G28                 to home
-G29                 probe the bed
 
-G1 X180 Y0
+```
+
+## Useful commands
+
+```
+G28                    to home
+G29                    probe the bed
+
+G1 X180 Y0             go to
 G1 X0 Y180
 G1 X0 Y0 Z20
 
 G1 X+20 Y+20
 
-M851 - XYZ Probe Offset
-
-
- When jogging, if you increase X the extruder should move to the right, and if you increase Y the bed should move towards the front of the printer. If either of these are incorrect we need to fix that first.
+M851                   tell the probe offset
 
 ```
