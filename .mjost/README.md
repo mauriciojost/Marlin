@@ -28,21 +28,38 @@ That's all.
 
 ```
 
-M111 S247           to enable maximum logging
+# Checks
+
+                       measure maximum range X and Y and Z and set them into X/Y_BED_SIZE
+                       (this assumes no bed start before endstops)
+
+M111 S247              use to enable maximum logging
+
+G28                    should auto-home X & Y at least (make sure you stop the printer at Z attempt)
+
+G1 X0 Y0 Z0            should go towards endstops (home)
+G1 X20 Y20 Z20         should go opposite of endstops
+
+
+M851                   after auto-home G28 see the xyz probe offset
+                       (if not right, you will have to adjust with
+M851 X-15 Y-41 Z-2.57  
+                       or clear EEPROM with
+M502                   (reset the eeprom, many bed leveling metrics are there)
+                       and flash the firmware again, this fixed the issue for me.
+                         
 G28                 to home
 G29                 probe the bed
 
-G1 X0 Y0            go to
 G1 X180 Y0
 G1 X0 Y180
 G1 X0 Y0 Z20
 
 G1 X+20 Y+20
-G1 X+40 Y+40 -> shoudl go to the right, to the front
+
+M851 - XYZ Probe Offset
 
 
  When jogging, if you increase X the extruder should move to the right, and if you increase Y the bed should move towards the front of the printer. If either of these are incorrect we need to fix that first.
-
-
 
 ```
