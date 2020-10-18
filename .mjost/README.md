@@ -78,5 +78,6 @@ M851                   tell the probe offset
 
 M140 S60               start heating the bed to 60 degrees Celsius
 M104 S200 T0           start heating T0 to 200 degrees celsius
+M21                    init sd card (in case of failure with it)
 
 ```
