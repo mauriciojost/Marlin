@@ -1,3 +1,14 @@
 #!/usr/bin/env bash
 cd ..
+
+function _branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+cat Configuration.h | grep -v CONFIGURATION_H_VERSION > Configuration.h.tmp
+echo "#define CONFIGURATION_H_VERSION $(_branch)" >> Configuration.h.tmp
+cat Configuration.h.tmp > Configuration.h
+rm *.tmp
 platformio run -e mega2560 --target upload
+
+
