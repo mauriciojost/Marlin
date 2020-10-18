@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-function _branch () {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+function _commit () {
+  git rev-parse HEAD 2> /dev/null | cut -c1-6
 }
 
 cat Configuration.h | grep -v CONFIGURATION_H_VERSION > Configuration.h.tmp
-echo "#define CONFIGURATION_H_VERSION $(_branch)" >> Configuration.h.tmp
+echo "#define CONFIGURATION_H_VERSION $(_commit)" >> Configuration.h.tmp
 cat Configuration.h.tmp > Configuration.h
 rm *.tmp
 
