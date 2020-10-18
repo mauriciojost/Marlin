@@ -4,8 +4,9 @@ function _commit () {
   git rev-parse HEAD 2> /dev/null | cut -c1-6
 }
 
-cat Configuration.h | grep -v CONFIGURATION_H_VERSION > Configuration.h.tmp
+cat Configuration.h | grep -v CONFIGURATION_H_VERSION | grep -v CUSTOM_MACHINE_NAME > Configuration.h.tmp
 echo "#define CONFIGURATION_H_VERSION $(_commit)" >> Configuration.h.tmp
+echo "#define CUSTOM_MACHINE_NAME \"MJ - $(_commit)\"" >> Configuration.h.tmp
 cat Configuration.h.tmp > Configuration.h
 rm *.tmp
 
