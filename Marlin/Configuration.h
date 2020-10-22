@@ -2424,5 +2424,5 @@
 
 // Allow servo angle to be edited and saved to EEPROM
 //#define EDITABLE_SERVO_ANGLES
-#define CONFIGURATION_H_VERSION eed92b
-#define CUSTOM_MACHINE_NAME "MJ - eed92b"
+#define CONFIGURATION_H_VERSION e03108
+#define CUSTOM_MACHINE_NAME "MJ - e03108"
