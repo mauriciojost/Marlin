@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
+#pio -f -c atom serialports monitor --raw --port /dev/ttyUSB0 -b 250000
 pio -f -c atom device monitor --raw --port /dev/ttyUSB0 -b 250000
-#pio -f -c atom device monitor --raw --port /dev/ttyUSB0 -b 500000
-#pio -f -c atom device monitor --raw --port /dev/ttyUSB0 -b 1000000
