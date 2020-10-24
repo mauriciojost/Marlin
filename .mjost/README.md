@@ -45,6 +45,7 @@ M500                    4. once good store on eeprom
                        (this assumes no bed start before endstops)
 
 M111 S247              use to enable maximum logging
+M111 S38               this seems better
 
 G28                    should auto-home X & Y at least (make sure you stop the printer at Z attempt)
 
