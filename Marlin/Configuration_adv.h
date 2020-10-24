@@ -1900,11 +1900,11 @@
 #if ENABLED(SDSUPPORT)
   // Enable this option to collect and display the maximum
   // RX queue usage after transferring a file to SD.
-  //#define SERIAL_STATS_MAX_RX_QUEUED
+  #define SERIAL_STATS_MAX_RX_QUEUED
 
   // Enable this option to collect and display the number
   // of dropped bytes after a file transfer to SD.
-  //#define SERIAL_STATS_DROPPED_RX
+  #define SERIAL_STATS_DROPPED_RX
 #endif
 
 /**
